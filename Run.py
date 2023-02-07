@@ -21,8 +21,8 @@ train_dataset = mnist.MNIST(root='./', train=True, transform=data_transform, dow
 test_dataset = mnist.MNIST(root='./', train=False, transform=data_transform, download=True)
 
 # Divide data into batches
-train_loader = DataLoader(train_dataset, batch_size=batch_size, num_workers=1)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, num_workers=1)
+train_loader = DataLoader(train_dataset, batch_size=batch_size)
+test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
 # The neural network
 model = nn.Sequential(nn.Linear(784, 128), nn.ReLU(),
