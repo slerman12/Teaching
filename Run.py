@@ -58,7 +58,7 @@ for epoch in range(epochs):
 
         # Print scores
         if i % 1000 == 0:
-            print('Epoch: {}, Acc: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
+            print('Epoch: {}, Training Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
 
             correct = total = 0
 
@@ -79,4 +79,4 @@ for epoch in range(epochs):
         correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
         total += y.shape[0]
 
-    print('Epoch: {}, Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
+    print('Epoch: {}, Evaluation Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
