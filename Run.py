@@ -25,14 +25,15 @@ train_loader = DataLoader(train_dataset, batch_size=batch_size)
 test_loader = DataLoader(test_dataset, batch_size=batch_size)
 
 # The neural network
-model = nn.Sequential(nn.Linear(784, 128), nn.ReLU(),
-                      nn.Linear(128, 64), nn.ReLU(),
-                      nn.Linear(64, 10))
+model = nn.Sequential(nn.Flatten(),  # Linear layers accept 1D inputs, so flatten the 2D RGB/or grayscale images
+                      nn.Linear(784, 128), nn.ReLU(),  # MNIST images are grayscale with height x width = 28 x 28 = 784
+                      nn.Linear(128, 64), nn.ReLU(),  # Linear layer (input size -> output size) followed by ReLU
+                      nn.Linear(64, 10))  # MNIST has 10 predicted classes
 
 model.to('cpu')  # Can write 'cuda' for GPU if you have one!
 
 # The loss function and optimizer
-cost = nn.CrossEntropyLoss()
+loss_fn = nn.CrossEntropyLoss()
 optim = SGD(model.parameters(), lr=lr)
 
 correct = total = 0
@@ -46,11 +47,10 @@ for epoch in range(epochs):
 
     # Train on the training data
     for i, (x, y) in enumerate(train_loader):
-        # Our neural network accepts flat 1D inputs, so flatten the 2D RGB/or grayscale images
-        x = torch.flatten(x, start_dim=1).float()  # Many Pytorch modules expect float data types by default
+        x = x.float()  # Many Pytorch modules expect float data types by default
 
         y_pred = model(x)  # Predict a class
-        loss = cost(y_pred, y)  # Compute error
+        loss = loss_fn(y_pred, y)  # Compute error
 
         # Tally scores
         correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
@@ -65,7 +65,7 @@ for epoch in range(epochs):
         # Optimize the neural network - learn!
         optim.zero_grad()  # Resets model's internal gradients to zero
         loss.backward()  # Adds the new gradients into memory (by computing them via the backpropagation function)
-        optim.step()  # Steps those gradients on the model
+        optim.step()  # Steps those gradients on the model. Independent since you might want to backprop multiple losses
 
     correct = total = 0  # Reset score statistics
 
@@ -73,7 +73,7 @@ for epoch in range(epochs):
 
     # Evaluate scores on the evaluation data
     for i, (x, y) in enumerate(test_loader):
-        x = torch.flatten(x, start_dim=1).float()
+        x = x.float()
         y_pred = model(x).detach()
 
         correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
