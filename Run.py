@@ -39,46 +39,47 @@ optim = SGD(model.parameters(), lr=lr)
 
 correct = total = 0
 
-# Start learning and evaluating
-for epoch in range(epochs):
-
-    # Just sets model.training to True. Some neural networks behave differently during training (e.g. nn.Dropout).
-    # Here, makes no difference. Just convention
-    model.train()
-
-    # Train on the training data
-    for i, (x, y) in enumerate(train_loader):
-        x, y = x.to(device), y.to(device)  # Move data to device (e.g. CPU, GPU)
-
-        y_pred = model(x)  # Predict a class
-        loss = loss_fn(y_pred, y)  # Compute error
-
-        # Tally scores
-        correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
-        total += y.shape[0]
-
-        # Print scores
-        if i % 1000 == 0:
-            print('Epoch: {}, Training Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
-
-            correct = total = 0
-
-        # Optimize the neural network - learn!
-        optim.zero_grad()  # Resets model's internal gradients to zero
-        loss.backward()  # Adds the new gradients into memory (by computing them via the backpropagation function)
-        optim.step()  # Steps those gradients on the model. Independent since you might want to backprop multiple losses
-
-    correct = total = 0  # Reset score statistics
-
-    model.eval()  # Sets model.training to False
-
-    # Evaluate scores on the evaluation data
-    for i, (x, y) in enumerate(test_loader):
-        x, y = x.to(device), y.to(device)
-
-        y_pred = model(x).detach()
-
-        correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
-        total += y.shape[0]
-
-    print('Epoch: {}, Evaluation Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
+if __name__ == "__main__":
+  # Start learning and evaluating
+  for epoch in range(epochs):
+  
+      # Just sets model.training to True. Some neural networks behave differently during training (e.g. nn.Dropout).
+      # Here, makes no difference. Just convention
+      model.train()
+  
+      # Train on the training data
+      for i, (x, y) in enumerate(train_loader):
+          x, y = x.to(device), y.to(device)  # Move data to device (e.g. CPU, GPU)
+  
+          y_pred = model(x)  # Predict a class
+          loss = loss_fn(y_pred, y)  # Compute error
+  
+          # Tally scores
+          correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
+          total += y.shape[0]
+  
+          # Print scores
+          if i % 1000 == 0:
+              print('Epoch: {}, Training Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
+  
+              correct = total = 0
+  
+          # Optimize the neural network - learn!
+          optim.zero_grad()  # Resets model's internal gradients to zero
+          loss.backward()  # Adds the new gradients into memory (by computing them via the backpropagation function)
+          optim.step()  # Steps those gradients on the model. Independent since you might want to backprop multiple losses
+  
+      correct = total = 0  # Reset score statistics
+  
+      model.eval()  # Sets model.training to False
+  
+      # Evaluate scores on the evaluation data
+      for i, (x, y) in enumerate(test_loader):
+          x, y = x.to(device), y.to(device)
+  
+          y_pred = model(x).detach()
+  
+          correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
+          total += y.shape[0]
+  
+      print('Epoch: {}, Evaluation Accuracy: {}/{} ({:.0f}%)'.format(epoch, correct, total, 100. * correct / total))
