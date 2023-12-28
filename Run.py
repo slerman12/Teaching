@@ -12,6 +12,7 @@ from torch.optim import SGD  # Stochastic gradient descent -- optimize the neura
 epochs = 2  # How many times to iterate through the full data for training
 batch_size = 32  # How many data-points to feed into the neural network at a time
 lr = 1e-2  # Learning rate -- controls the magnitude of gradients
+device = 'cpu'  # Can write 'cuda' for GPU if you have one
 
 # Pre-process
 data_transform = Compose([ToTensor(), Normalize((0.1307,), (0.3081,))])
@@ -30,7 +31,7 @@ model = nn.Sequential(nn.Flatten(),  # Linear layers accept 1D inputs, so flatte
                       nn.Linear(128, 64), nn.ReLU(),  # Linear layer (input size -> output size) followed by ReLU
                       nn.Linear(64, 10))  # MNIST has 10 predicted classes
 
-model.to('cpu')  # Can write 'cuda' for GPU if you have one!
+model.to(device)  # Move model to device (e.g. CPU, GPU)
 
 # The loss function and optimizer
 loss_fn = nn.CrossEntropyLoss()
@@ -47,7 +48,7 @@ for epoch in range(epochs):
 
     # Train on the training data
     for i, (x, y) in enumerate(train_loader):
-        x = x.float()  # Many Pytorch modules expect float data types by default
+        x, y = x.to(device), y.to(device)  # Move data to device (e.g. CPU, GPU)
 
         y_pred = model(x)  # Predict a class
         loss = loss_fn(y_pred, y)  # Compute error
@@ -73,7 +74,8 @@ for epoch in range(epochs):
 
     # Evaluate scores on the evaluation data
     for i, (x, y) in enumerate(test_loader):
-        x = x.float()
+        x, y = x.to(device), y.to(device)
+
         y_pred = model(x).detach()
 
         correct += (torch.argmax(y_pred, dim=-1) == y).sum().item()
