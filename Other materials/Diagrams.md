@@ -11,3 +11,5 @@ Description of biological neurons as LSTMs: [https://drive.google.com/file/d/1i5
 Connecting the idea of two-stream hypothesis with cross-attention:
 
 <img width="1061" alt="Screenshot 2023-12-28 at 7 43 40 PM" src="https://github.com/slerman12/Teaching/assets/9126603/20420592-5c41-41dc-b5f4-b24f51fbb57c">
+
+Architecture systems: https://docs.google.com/presentation/d/1JpT09GMN0xa81J1h88urRklcOZkJ704s58LHHikmUG8/edit?usp=sharing
