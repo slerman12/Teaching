@@ -1,6 +1,4 @@
 > This is a Slack message I sent to my advisor, one of his students, and the XRD group.
->
-> I sent this to my advisor and our XRD group, and he never replied or mentioned it again. His students were always thrilled with my ideas (and I gave many, many — like many — as they can all agree, and I appreciate their appreciation and their consistent support).
 
 <img width="513" alt="SingleHeadAttention" src="https://github.com/slerman12/Template/assets/9126603/452f266d-d1dc-44d5-89e3-86f2734bf531">
 
