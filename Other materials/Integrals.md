@@ -1,5 +1,7 @@
 # Integrals Intuitions
 
+## Complete Intuition
+
 If $F’(x)$ is the derivative of $F(x)$
 
 then the integral of $F’(x)$ is $F(x) + c$.
