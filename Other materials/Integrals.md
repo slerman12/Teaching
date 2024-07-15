@@ -40,7 +40,7 @@ It’s a function because something can hypothetically be the derivative of mult
 
 ### Definite Integral
 
-A definite integral is the difference of two something elses at two different points, an upper point $b$ and a lower point $a$. 
+A definite integral is the difference of two something elses at two different points, an upper point and a lower point. 
 
 It’s a value rather than a function because the multiple something elses that might be the integral differ only by the same amount c, and that amount gets eliminated by the subtraction, leaving only a definite value. 
 
@@ -48,4 +48,4 @@ It’s a value rather than a function because the multiple something elses that 
 > 
 > $$F(b) - F(a) = \int_{a}^{b} f(x) dx.$$
 > 
-> The meaning of $dx$ here is the little widths of those rectangles that get added up in the area under the curve (with $f(x)$ as the heights of those respective rectangles).
+> The meaning of $dx$ here is the little widths of those rectangles that get added up in the area under the curve (with $f(x)$ as the heights of those respective rectangles). $a$ and $b$ are the two points.
