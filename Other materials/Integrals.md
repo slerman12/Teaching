@@ -44,4 +44,4 @@ It’s a value rather than a function because the multiple something elses that 
 > 
 > $$F(b) - F(a) = \int_{a}^{b} f(x) dx.$$
 > 
-> The meaning of dx here is the little widths of those rectangles that get added up in the area under the curve (with f(x) as the heights of those respective rectangles).
+> The meaning of $dx$ here is the little widths of those rectangles that get added up in the area under the curve (with $f(x)$ as the heights of those respective rectangles).
