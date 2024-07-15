@@ -40,7 +40,7 @@ It’s a function because something can hypothetically be the derivative of mult
 
 ### Definite Integral
 
-A definite integral is the difference of two something elses at two different points, e.g. $b$ and $a$, an upper point and a lower point. 
+A definite integral is the difference of two something elses at two different points, an upper point $b$ and a lower point $a$. 
 
 It’s a value rather than a function because the multiple something elses that might be the integral differ only by the same amount c, and that amount gets eliminated by the subtraction, leaving only a definite value. 
 
