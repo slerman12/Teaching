@@ -8,7 +8,7 @@ then the integral of $F’(x)$ is $F(x) + c$.
 
 $F’(x)$ is the integrand and $F(x) + c$ is the integral. 
 
-An interesting relationship between $F’(x)$ and $F(x)$ is that each point of $F’(x)$ is how much $F(x)$ is changing at that point. This is true for all $g'(x)$ and $g(x)$, by definition of derivative, not integral.
+An interesting relationship between $F’(x)$ and $F(x)$ is that each point of $F’(x)$ is how much $F(x)$ is changing at that point. This is true for all $g'(x)$ and $g(x)$, by definition of derivative, not specific to integrals.
 
 So that means, if you start at some value of $F(x)$, call it $c$, you can add up all those little changes from that point up to another point.
 
