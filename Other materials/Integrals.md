@@ -28,7 +28,7 @@ And that’s all.
 
 ### Indefinite Integral
 
-An **indefinite integral** is just an inverse derivative. If something is the derivative of something else, then something else is the indefinite integral of something. 
+An indefinite integral is just an inverse derivative. If something is the derivative of something else, then something else is the indefinite integral of something. 
 
 It’s a function because something can hypothetically be the derivative of multiple hypothetical something elses, varying in difference by a constant c, since taking the derivative eliminates that constant anyway. 
 
@@ -40,7 +40,7 @@ It’s a function because something can hypothetically be the derivative of mult
 
 ### Definite Integral
 
-A **definite integral** is the difference of two something elses at two different points, an upper point and a lower point. 
+A definite integral is the difference of two something elses at two different points, an upper point and a lower point. 
 
 It’s a value rather than a function because the multiple something elses that might be the integral differ only by the same amount c, and that amount gets eliminated by the subtraction, leaving only a definite value. 
 
