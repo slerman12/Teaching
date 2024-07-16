@@ -32,7 +32,7 @@ And that’s all.
 
 An indefinite integral is just an inverse derivative. If something is the derivative of something else, then something else is the indefinite integral of something. 
 
-It’s a function because something can hypothetically be the derivative of multiple hypothetical something elses, varying in difference by a constant c, since taking the derivative eliminates that constant anyway. 
+It’s a function because something can hypothetically be the derivative of multiple hypothetical something elses, varying in difference by a constant $c$, since taking the derivative eliminates that constant anyway. 
 
 > It looks like this:
 > 
