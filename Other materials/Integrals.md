@@ -8,13 +8,13 @@ then the integral of $F’(x)$ is $F(x) + c$.
 
 $F’(x)$ is the integrand and $F(x) + c$ is the integral. 
 
-An interesting relationship between $F’(x)$ and $F(x)$ is that each point of $F’(x)$ is how much $F(x)$ is changing at that point. (That is true for all derivatives $g'(x)$ of functions $g(x)$, not specific to integrals).
+An interesting relationship between $F’(x)$ and $F(x)$ is that each point of $F’(x)$ is how much $F(x)$ is changing at that point. That's true for all derivatives $g'(x)$ of functions $g(x)$.
 
 So that means, if you start at some value of $F(x)$, call it $c$, you can add up all those little changes from that point up to another point.
 
 So add up all the $F’(x + \text{\color{green}in between however much})$ to $c$ and you get $F(x + \text{\color{green}however much})$.
 
-So $F(x + \text{however much}) - F(x)$ is the sum of all those little changes between $x$ and $x + \text{\color{green}however much}$.
+So $F(x + \text{\color{green}however much}) - F(x)$ is the sum of all those little changes between $x$ and $x + \text{\color{green}however much}$.
 
 In other words, it’s the sum of all the lines under $F’(\cdot)$ from that start to end point.
 
