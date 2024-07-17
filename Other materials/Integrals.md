@@ -4,7 +4,7 @@
 
 If $F’(x)$ is the derivative of $F(x)$
 
-then the integral of $F’(x)$ is $F(x) + c$.
+then the integral of $F’(x)$ is $F(x) + c$ for any constant $c$.
 
 $F’(x)$ is the integrand and $F(x) + c$ is the integral. 
 
